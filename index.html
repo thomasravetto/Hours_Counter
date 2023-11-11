@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hours Counter</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Carica File CSV</h1>
+        <p>Il file deve essere in formato CSV, <br> ogni dato deve essere separato da una virgola. <br>
+        Assicurarsi che la prima riga sia formata da 'giorno, inizio, fine, pausa'.</p>
+
+        <form id="csvForm" enctype="multipart/form-data">
+            <label for="csvFile">Scegli un file CSV:</label>
+            <input type="file" id="csvFile" name="csvFile" accept=".txt" required>
+            <br>
+            <button type="button" onclick="handleFile()">Calcola</button>
+            <br>
+            <div id="resultContainer" class="result-container"></div>
+            <div id="totalHoursContainer" class="total-hours-container"></div>
+        </form>
+    </div>
+</body>
+</html>
