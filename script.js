@@ -12,7 +12,7 @@ function handleFile() {
             const processedHours = processData(content);
 
             const resultContainer = document.getElementById('resultContainer');
-            resultContainer.innerHTML = '';
+            clearContainer(resultContainer);
 
             let totalMinutesCount = 0;
             let totalHoursCount;
@@ -40,15 +40,15 @@ function handleFile() {
                 pauseDiv.textContent = `${pausa} minuti`;
                 totalHoursDiv.textContent = `${total[1][0]}:${total[1][1]}`
 
-                resultContainer.appendChild(dayDiv);
-                resultContainer.appendChild(startDiv);
-                resultContainer.appendChild(endDiv);
-                resultContainer.appendChild(pauseDiv);
-                resultContainer.appendChild(totalHoursDiv);
+                appendToContainer(resultContainer, dayDiv);
+                appendToContainer(resultContainer, startDiv);
+                appendToContainer(resultContainer, endDiv);
+                appendToContainer(resultContainer, pauseDiv);
+                appendToContainer(resultContainer, totalHoursDiv);
             });
 
             const totalHoursContainer = document.getElementById('totalHoursContainer');
-            totalHoursContainer.innerHTML = '';
+            clearContainer(totalHoursContainer);
 
             const hoursDiv = document.createElement('div');
 
@@ -65,6 +65,22 @@ function handleFile() {
     } else {
         alert('Please choose a CSV file.');
     }
+}
+
+function clearContainer(container) {
+    while (container.firstChild) {
+        const child = container.firstChild;
+        if (child.classList && !child.classList.contains('help_title')) {
+            container.removeChild(child);
+        } else {
+            break; // Stop clearing when encountering a title
+        }
+    }
+}
+
+
+function appendToContainer(container, element) {
+    container.appendChild(element);
 }
 
 function processData(csvContent) {
