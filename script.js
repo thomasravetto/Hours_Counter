@@ -12,6 +12,7 @@ function handleFile() {
             const processedHours = processData(content);
 
             const resultContainer = document.getElementById('resultContainer');
+            resultContainer.innerHTML = '';
 
             let totalMinutesCount = 0;
             let totalHoursCount;
