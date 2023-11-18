@@ -48,6 +48,7 @@ function handleFile() {
             });
 
             const totalHoursContainer = document.getElementById('totalHoursContainer');
+            totalHoursContainer.innerHTML = '';
 
             const hoursDiv = document.createElement('div');
 

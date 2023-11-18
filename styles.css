@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
@@ -15,7 +15,7 @@ body {
 }
 
 h1 {
-    color: #3498db;
+    color: #333;
     text-align: center;
 }
 
@@ -26,7 +26,6 @@ form {
 label {
     display: block;
     margin-bottom: 5px;
-    color: #333;
 }
 
 input {
@@ -37,75 +36,52 @@ input {
 }
 
 button {
-    background-color: #2ecc71;
+    background-color: #4caf50;
     color: #fff;
     padding: 10px;
     border: none;
     cursor: pointer;
-    width: 100%;
-    border-radius: 4px;
+    width: 100%; /* Make the button full width */
 }
 
 button:hover {
-    background-color: #27ae60;
+    background-color: #45a049;
 }
 
 .result-container {
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    background-color: #ecf0f1;
-    border-radius: 4px;
-    overflow: hidden;
 }
 
 .result-container div {
-    border-right: 1px solid #bdc3c7;
-    border-bottom: 1px solid #bdc3c7;
-    padding: 15px;
-    text-align: center;
-}
-
-.result-container div:last-child {
-    border-right: none;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    text-align: center; /* Center the text in each grid item */
 }
 
 .total-hours-container {
     margin-top: 20px;
     font-size: 1.2em;
     font-weight: bold;
-    text-align: center;
-    color: #e74c3c;
+    text-align: center; /* Center the text */
 }
 
 .help_title {
     display: inline;
-    color: #3498db;
 }
 
 @media only screen and (max-width: 600px) {
-    .container {
-        margin: 20px;
-        padding: 10px;
-    }
-
+    /* Apply styles for screens with a maximum width of 600px (typical mobile screens) */
     .result-container {
         grid-template-columns: 1fr; /* Change to a single column layout */
     }
-
+    
     .result-container div {
         text-align: left; /* Align text to the left for better readability on smaller screens */
-        border-right: none;
-        border-bottom: 1px solid #bdc3c7;
-        padding: 15px;
     }
-
-    .result-container div:last-child {
-        border-bottom: none;
-    }
-
+    
     .total-hours-container {
         text-align: left; /* Align text to the left */
     }
 }
-
