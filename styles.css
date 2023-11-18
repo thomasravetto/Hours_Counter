@@ -49,6 +49,8 @@ button:hover {
 
 .result-container {
     margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 16vh);
 }
 
 .result-container div {
@@ -60,4 +62,8 @@ button:hover {
     margin-top: 20px;
     font-size: 1.2em;
     font-weight: bold;
+}
+
+.help_title {
+    display: inline;
 }

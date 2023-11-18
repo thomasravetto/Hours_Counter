@@ -17,9 +17,15 @@ function handleFile() {
             let totalHoursCount;
 
             processedHours.forEach((day) => {
-                const resultDiv = document.createElement('div');
+                const dayDiv = document.createElement('div');
+                const startDiv = document.createElement('div');
+                const endDiv = document.createElement('div');
+                const pauseDiv = document.createElement('div');
+                const totalHoursDiv = document.createElement('div');
 
                 const {giorno, inizio, fine, pausa} = day;
+
+                console.log(giorno)
 
                 const total = hoursPerDay(inizio, fine, pausa);
 
@@ -27,9 +33,17 @@ function handleFile() {
 
                 totalHoursCount = countHours(totalMinutesCount);
 
-                resultDiv.textContent = `${giorno} - ${inizio} - ${fine} - ${pausa} minuti - ${total[1][0]}:${total[1][1]}`;
+                dayDiv.textContent = `${giorno}`;
+                startDiv.textContent = `${inizio}`;
+                endDiv.textContent = `${fine}`;
+                pauseDiv.textContent = `${pausa} minuti`;
+                totalHoursDiv.textContent = `${total[1][0]}:${total[1][1]}`
 
-                resultContainer.appendChild(resultDiv);
+                resultContainer.appendChild(dayDiv);
+                resultContainer.appendChild(startDiv);
+                resultContainer.appendChild(endDiv);
+                resultContainer.appendChild(pauseDiv);
+                resultContainer.appendChild(totalHoursDiv);
             });
 
             const totalHoursContainer = document.getElementById('totalHoursContainer');
