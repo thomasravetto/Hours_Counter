@@ -41,6 +41,7 @@ button {
     padding: 10px;
     border: none;
     cursor: pointer;
+    width: 100%; /* Make the button full width */
 }
 
 button:hover {
@@ -50,20 +51,34 @@ button:hover {
 .result-container {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(5, 16vh);
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Adjust the grid layout for responsiveness */
 }
 
 .result-container div {
     border-bottom: 1px solid #ddd;
     padding: 10px;
+    text-align: center; /* Center the text in each grid item */
 }
 
 .total-hours-container {
     margin-top: 20px;
     font-size: 1.2em;
     font-weight: bold;
+    text-align: center; /* Center the text */
 }
 
 .help_title {
     display: inline;
+}
+
+@media only screen and (max-width: 600px) {
+    /* Apply styles for screens with a maximum width of 600px (typical mobile screens) */
+    .container {
+        margin: 20px;
+        padding: 10px;
+    }
+
+    .result-container {
+        grid-template-columns: 1fr; /* Change to a single column layout */
+    }
 }
