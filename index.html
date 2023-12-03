@@ -13,9 +13,9 @@
         <p>Il file deve essere in formato CSV, <br> ogni dato deve essere separato da una virgola. <br>
         Assicurarsi che la prima riga sia formata da 'giorno, inizio, fine, pausa'.</p>
 
-        <form id="csvForm" enctype="multipart/form-data">
-            <label for="csvFile">Scegli un file CSV:</label>
-            <input type="file" id="csvFile" name="csvFile" accept=".txt" required>
+        <form id="txtForm" enctype="multipart/form-data">
+            <textarea id="txtFile" name="txtFile">
+                </textarea>
             <br>
             <button type="button" onclick="handleFile()">Calcola</button>
             <br>

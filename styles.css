@@ -5,6 +5,11 @@ body {
     padding: 0;
 }
 
+#txtFile {
+    width: 600px;
+    height: 200px;
+}
+
 .container {
     max-width: 600px;
     margin: 50px auto;

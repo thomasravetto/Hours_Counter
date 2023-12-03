@@ -1,15 +1,11 @@
 function handleFile() {
-    const fileInput = document.getElementById('csvFile');
-    const file = fileInput.files[0];
+    const fileInput = document.getElementById('txtFile');
+    const file = fileInput.value;
 
     console.log(file);
 
-    if (file) {
-        const reader = new FileReader();
-
-        reader.onload = (e) => {
-            const content = e.target.result;
-            const processedHours = processData(content);
+    if (file) {;
+            const processedHours = processData(file);
 
             const resultContainer = document.getElementById('resultContainer');
             clearContainer(resultContainer);
@@ -38,7 +34,7 @@ function handleFile() {
                 startDiv.textContent = `${inizio}`;
                 endDiv.textContent = `${fine}`;
                 pauseDiv.textContent = `${pausa} minuti`;
-                totalHoursDiv.textContent = `${total[1][0]}:${total[1][1]}`
+                totalHoursDiv.textContent = `${total[1][0]}:${(total[1][1] > 0) ? total[1][1] : '00'}`
 
                 appendToContainer(resultContainer, dayDiv);
                 appendToContainer(resultContainer, startDiv);
@@ -55,17 +51,10 @@ function handleFile() {
             hoursDiv.textContent = totalHoursCount;
 
             totalHoursContainer.appendChild(hoursDiv);
+        } else {
+            alert('Please choose a CSV file.');
         };
-
-        reader.onerror = (e) => {
-            alert('Error reading the file!');
-        };
-
-        reader.readAsText(file);
-    } else {
-        alert('Please choose a CSV file.');
     }
-}
 
 function clearContainer(container) {
     while (container.firstChild) {
